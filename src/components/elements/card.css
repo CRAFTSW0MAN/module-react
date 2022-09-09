@@ -1,0 +1,40 @@
+.card {
+  border: 1px solid #D58C51;
+  width: 270px;
+  text-align: center;
+  padding: 30px 25px 15px 20px;
+
+}
+.card:hover {
+  color: #D58C51;
+}
+
+.card-title{
+  text-align: start;
+  height: 70px;
+  line-height: 20px;
+}
+
+.card-description{
+  height: 70px;
+  padding: 0 0 55px 0;
+  text-align: start;
+  line-height: 17px;
+}
+
+.card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button02 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #161516;
+  padding: 0 30px 30px 0 ;
+}
+.button02:hover {
+  background-color: #D58C51;
+}
