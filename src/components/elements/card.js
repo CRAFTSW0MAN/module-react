@@ -1,14 +1,22 @@
 import './card.css';
-function Card({url, title, description, info}) {
+function Card({img, name, description, price,weight}) {
     return (
         <div className= 'card'>
-            <img className='card-img' src={url} alt=''/>
-            <h2 className='card-title'>{title}</h2>
+            <img className='card-img' src={img} alt=''/>
+            <h2 className='card-name'>{name}</h2>
             <p className='card-description'>{description}</p>
             <div className='card-price price'>
-                <p className='card-price__info'>{info}</p>
+                <div className='card-price__info info'>
+                    <samp className='info-price'>{price}</samp>
+                    <span className='info-weight'>{weight}</span>
+                </div>
                 <button className='card-price__button button02'>
-                    <img className='button__img' src='images/addition.svg' alt=''/>
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" stroke="white"/>
+                    <path d="M15 9.28564V20.3571" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M20.3569 14.8214L9.28551 14.8213" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+
                 </button>
             </div>
         </div>

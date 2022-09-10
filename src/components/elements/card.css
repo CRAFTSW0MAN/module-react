@@ -9,7 +9,7 @@
   color: #D58C51;
 }
 
-.card-title{
+.card-name{
   text-align: start;
   height: 70px;
   line-height: 20px;
@@ -26,6 +26,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.info-price {
+  font-size: 17px;
+}
+.info-weight {
+  font-size: 14px;
 }
 
 .button02 {
