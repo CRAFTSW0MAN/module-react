@@ -1,0 +1,35 @@
+.cardBasket {
+    margin: 10px auto;
+    width: 880px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    padding: 15px 0;
+}
+.cardBasket-name{
+    width: 290px;
+    font-size: 17px;
+}
+.cardBasket-img {
+    height: 122px;
+    width: 122px;
+}
+.cardBasket__button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #161516;
+    padding: 0 30px 30px 0;
+}
+.cardBasket__button:hover {
+    background-color: #d55151;
+}
+.cardBasket-price{
+    font-size: 18px;
+    color: #D58C51;
+}
+.cardBasket-ruble{
+    font-size: 18px;
+    color: #D58C51;
+}

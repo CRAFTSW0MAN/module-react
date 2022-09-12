@@ -7,7 +7,8 @@ function Card({img, name, description, price,weight}) {
             <p className='card-description'>{description}</p>
             <div className='card-price price'>
                 <div className='card-price__info info'>
-                    <samp className='info-price'>{price}</samp>
+                    <span className='info-price'>{price}</span>
+                    <span> ₽/ </span>
                     <span className='info-weight'>{weight}</span>
                 </div>
                 <button className='card-price__button button02'>
