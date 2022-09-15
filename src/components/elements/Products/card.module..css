@@ -1,40 +1,49 @@
 .card {
   border: 1px solid #D58C51;
   width: 270px;
+  height: 552px;
   text-align: center;
   padding: 30px 25px 15px 20px;
+  margin-bottom:  35px;
 
 }
 .card:hover {
   color: #D58C51;
 }
 
-.card-name{
+.cardName{
+  padding: 31px 0 10px 0;
   text-align: start;
   height: 70px;
+  font-size: 17px;
+  font-weight: 500;
   line-height: 20px;
 }
 
-.card-description{
+.cardDescription{
   height: 70px;
   padding: 0 0 55px 0;
   text-align: start;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 17px;
 }
 
-.card-price {
+.cardPrice {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.info-price {
+.infoPrice {
   font-size: 17px;
+  font-weight: 500;
 }
-.info-weight {
+.infoWeight {
   font-size: 14px;
+  font-weight: 400;
 }
 
-.button02 {
+.button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
