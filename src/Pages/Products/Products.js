@@ -1,6 +1,6 @@
 import './Products.css';
-import Card from '../../components/elements/Products/card'; 
-import {menuList} from '../../menuList.js'; 
+import {menuList} from '../../menuList.js';
+import Card from '../../components/elements/Products/card.js'; 
 function Products() {
     return (
         <main className='main'>
@@ -25,14 +25,14 @@ function Products() {
                 </header>
 
                 <div className='container-menu'>
-                    {menuList.map(key => {
+                    {menuList.map(product02 => {
                         return(
                             <Card 
-                                img={key.img}
-                                name ={key.name}
-                                description = {key.description}
-                                price ={key.price}
-                                weight ={key.weight}
+                                img={product02.img}
+                                name ={product02.name}
+                                description ={product02.description}
+                                price ={product02.price}
+                                weight ={product02.weight}
                             />
                         )
                     })}

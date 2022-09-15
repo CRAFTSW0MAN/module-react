@@ -22,12 +22,12 @@ function Basket() {
                     <h1 className='header__title'>КОРЗИНА С ВЫБРАННЫМИ ТОВАРАМИ</h1>
                 </header>
                 <div className='main-container-choice'>
-                    {menuList.map(key => {
+                    {menuList.map(product => {
                         return(
                             <CardBasket 
-                                img={key.img}
-                                name ={key.name}
-                                price ={key.price}
+                                img={product.img}
+                                name ={product.name}
+                                price ={product.price}
                             />
                         )
                     })}

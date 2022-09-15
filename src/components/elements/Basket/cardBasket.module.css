@@ -4,42 +4,42 @@
     display: flex;
     justify-content:space-between;
 }
-.basket-info{
+.basketInfo{
     display: flex;
     justify-content:space-between;
     align-items: center;
 }
-.basket-info-name{
+.basketInfoName{
     width: 290px;
     font-size: 17px;
     font-weight: 500;
     padding: 0 90px;
 }
-.basket-info__img {
+.basketInfoImg {
     height: 122px;
     width: 122px;
 }
-.basket-total{
+.basketTotal{
     display: flex;
     justify-content:space-between;
     align-items: center;
 }
-.basket-total__button {
+.basketTotalButton {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #161516;
     padding: 0 30px 30px 0;
 }
-.basket-total__button:hover {
+.basketTotalButton:hover {
     background-color: #d55151;
 }
-.basket-total-price{
+.basketTotalPrice{
     font-size: 18px;
     font-weight: 400;
     color: #D58C51;
 }
-.basket-total-ruble{
+.basketTotalRuble{
     font-size: 18px;
     font-weight: 400;
     color: #D58C51;
