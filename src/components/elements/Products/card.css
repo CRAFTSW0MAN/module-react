@@ -1,8 +1,10 @@
 .card {
   border: 1px solid #D58C51;
   width: 270px;
+  height: 552px;
   text-align: center;
   padding: 30px 25px 15px 20px;
+  margin-bottom:  35px;
 
 }
 .card:hover {
@@ -10,8 +12,11 @@
 }
 
 .card-name{
+  padding: 31px 0 10px 0;
   text-align: start;
   height: 70px;
+  font-size: 17px;
+  font-weight: 500;
   line-height: 20px;
 }
 
@@ -19,6 +24,8 @@
   height: 70px;
   padding: 0 0 55px 0;
   text-align: start;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 17px;
 }
 
@@ -29,9 +36,11 @@
 }
 .info-price {
   font-size: 17px;
+  font-weight: 500;
 }
 .info-weight {
   font-size: 14px;
+  font-weight: 400;
 }
 
 .button02 {

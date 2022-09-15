@@ -1,0 +1,149 @@
+body{
+    background-image: url(/public/images/Authorization.jpg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main {
+    position: relative;
+    height: 1080px;
+}
+.registration{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #FFFFFF;
+    width: 460px;
+    height: 340px;
+    text-align: center;
+}
+
+.registration-block-conversion {
+    margin: 10px 20px;
+    color: #D58C51;
+    font-size: 11px;
+    font-weight: 300;
+    text-align: end;
+    transition: 200ms;
+}
+.form-reg:hover {
+    text-decoration: underline;
+}
+.info{
+    padding: 0 20px;
+    color: #161516;
+    position: relative;
+}
+.info-title{
+    font-size: 31px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+.info-input__window{
+    border-radius: 61px;
+    border: 1px solid #D58C51;
+    width: 390px;
+    padding: 10px 0 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.error {
+    text-align: start;
+    font-size: 8px;
+    font-weight: 300;
+    color: #FF0B0B;
+    padding: 0 23px;
+}
+
+.info-input-error {
+    position: absolute;
+    top: 130px;
+    display: none;
+}
+.info-input-error2 {
+    position: absolute;
+    top: 130px;
+    display: none;
+}
+.info-input-error3 {
+    position: absolute;
+    top: 190px;
+    display: none;
+}
+.info-input-error4 {
+    position: absolute;
+    top: 190px;
+    display: none;
+}
+.info-input-error5 {
+    font-size: 8px;
+    font-weight: 300;
+    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    padding: 15px;
+}
+.check {
+    display: flex;
+    text-align: start;
+    align-items: center;
+}
+
+/**сам текст label **/
+.check-label {
+    display: inline-block;
+    padding:0 33px;
+    text-align: start;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13px;
+    cursor: pointer;
+    position: relative;
+}
+
+/**создаем новый уникальный "checkbox"**/
+.check-elem {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #D58C51;
+    border-radius: 50%;
+    cursor: pointer;
+    left: 5px;
+    top: -3px;
+}
+/**скрываем сам "checkbox"**/
+.check-label input[type="checkbox"] {
+    position: absolute;
+    display: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -moz-user-select: none;
+    user-select: none;
+    appearance: none;
+}
+
+/**создаем галочку при состоянии ":checked" условие: если  для label:checked ,то новый "checkbox" с :after должен стать **/
+.check-label input:checked + .check-elem:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 3px;
+    background: url('/public/images/check.svg');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.button {
+    background-color: #D58C51;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 77px;
+    transition: 200ms;
+}
+.button:hover {
+    background-color: #e66a6a;
+}
