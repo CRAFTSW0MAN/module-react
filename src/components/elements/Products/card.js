@@ -1,5 +1,19 @@
 import style from './card.module.css'
-function Card({img, name, description, price,weight}) {
+import React, {useState} from 'react';
+function Card({img, name, description, price,weight,id,handelePlus,handeleMinus}) {
+
+    const [Count, setCount] = useState (0)
+    // const handelePlus = () => {
+    //     setCount (Count + 1)
+    // }
+    // const handeleMinus = () => {
+    //     if (Count > 0) {
+    //         setCount (Count - 1)
+    //     } else {
+    //         Count = 0
+    //     }
+    // }
+
     return (
         <div className={style.card}>
             <img className={style.cardImg} src={img} alt=''/>
@@ -11,13 +25,11 @@ function Card({img, name, description, price,weight}) {
                     <span className={style.infoPrice}> ₽/ </span>
                     <span className={style.infoWeight}>{weight}</span>
                 </div>
-                <button className={style.button}>
-                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="14.5" stroke="white"/>
-                    <path d="M15 9.28564V20.3571" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M20.3569 14.8214L9.28551 14.8213" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+                <div className={style.count}>
+                    <button onClick={handeleMinus} className={style.button}>-</button>
+                    <div className={style.countButton}>{Count}</div>
+                    <button onClick={handelePlus} className={style.button}>+</button>
+                </div>
             </div>
         </div>
     );
