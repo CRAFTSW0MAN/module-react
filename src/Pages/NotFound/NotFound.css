@@ -1,0 +1,13 @@
+.container {
+    background-image: url(/public/images/Authorization.jpg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 1080px;
+    justify-content: center;
+    align-items: center;
+    color: #40e1df;
+    font-size: 40px;
+    font-weight: 700;
+}

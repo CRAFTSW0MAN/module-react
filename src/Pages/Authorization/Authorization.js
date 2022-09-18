@@ -1,45 +1,53 @@
-import './Authorization.css';
+import style from './Authorization.module.css';
+import { Link } from 'react-router-dom' 
 
 function Authorization() {
     return (
-        <main className='main'>
-            <div class="container__entrance entrance" id="form-entrance">
-                <form class="entrance-block" action="#">
-                    <div class="entrance-block-conversion">
-                        <a  href="#form-registration" class="form-auth" id="form-auth">Зарегистрироваться</a>
+        <main className={style.main}>
+            <div className={style.container}>
+            <div className={style.containerEntrance} >
+                <form className={style.entranceBlock} action="#">
+                    <div className={style.entranceBlockConversion} >
+                        <Link to="/registration" className={style.formAuth} >Зарегистрироваться</Link>
                     </div>
-                    <div class="entrance-block__info info">
-                        <h1 class="info-title">ВХОД</h1>
-                        <div class="info-input">
-                            <input class="info-input__window" id = "entrance-email" type="email" name="Е-mail" placeholder="Логин"/>
-                            <div class="info-input-error error" id="entrance-input-error">
+                    <div className={style.entranceBlockInfo}>
+                        <h1 className={style.infoTitle}>ВХОД</h1>
+                        <div className={style.infoInput}>
+                            <input className={style.infoInputWindow}  type="email" name="Е-mail" placeholder="Логин"/>
+                            <div className={style.infoInputError + " " + style.Error} >
                                 Поле не должно быть пустым
                             </div>
                         </div>
 
-                        <div class="info-input">
-                            <input class="info-input__window" id = "entrance-password" type="text" name="password" placeholder="Пароль"/>
-                            <div class="info-input-error2 error" id="entrance-input-error2">
+                        <div className={style.infoInput}>
+                            <input className={style.infoInputWindow} type="text" name="password" placeholder="Пароль"/>
+                            <div className={style.infoInputError2 + " " + style.Error} >
                                 Поле не должно быть пустым
                             </div>
                         </div>
-                        <div class="info-checkbox check">
-                            <label class="check-label">
-                                <input class="check__input" id = "entrance-label" type="checkbox"/>
-                                <span class="check-elem" id = "entrance-checkbox" ></span>
+                        <div className={style.infoCheckbox}>
+                            <label className={style.checkLabel}>
+                                <input className={style.checkInput} type="checkbox"/>
+                                <span className={style.checkElem}  ></span>
                                 Я согласен получать обновления на почту
                             </label>
                     
                         </div>
-                        <div class="info-input-error3" id="entrance-error3">
+                        <div className={style.entranceError3 + " " + style.Error}>
                             Логин или пароль неверен
                         </div>
                     </div>
-                    <div class="entrance-block__button">
-                        <button class="button" id = "entrance-button" >Войти</button>
+                    <div>
+                        <Link to='/products'>
+                            <button className={style.entranceBlockButton}>
+                                <h1 className={style.entranceBlockButtonTitle}>Войти</h1>
+                            </button>
+                        </Link>
                     </div>
                 </form>
             </div>
+            </div>
+            
         </main>
     );
 }

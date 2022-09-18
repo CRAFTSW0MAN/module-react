@@ -45,11 +45,26 @@
 
 .button {
   width: 30px;
+  font-size: 18px;
+  font-weight: 500;
   height: 30px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
   border-radius: 50%;
   background-color: #161516;
-  padding: 0 30px 30px 0 ;
 }
-.button02:hover {
+.button:hover {
   background-color: #D58C51;
+}
+.count {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.countButton {
+  font-size: 14px;
+  padding: 0 10px;
 }

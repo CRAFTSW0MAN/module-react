@@ -1,49 +1,55 @@
-import './Registration.css';
-
+import style from './Registration.module.css';
+import { Link } from 'react-router-dom'
 function Registration() {
     return (
-        <main className='main'>
-            <div class="container__registration registration" id="form-registration">
-                <form class="registration-block" action="#">
-                    <div class="registration-block-conversion">
-                        <a href="#form-entrance" class="form-reg" id="form-reg">Авторизоваться</a>
+        <main className={style.main}>
+            <div className={style.container}>
+            <div className={style.containerRegistration} id="form-registration">
+                <form className={style.registrationBlock} action="#">
+                    <div className={style.registrationBlockConversion}>
+                        <Link to="/" className={style.formReg} id="form-reg">Авторизоваться</Link>
                     </div>
-                    <div class="registration-block__info info">
-                        <h1 class="info-title">РЕГИСТРАЦИЯ</h1>
-                        <div class="info-input">
-                            <input class="info-input__window" id = "email" type="email" name="Е-mail" placeholder="Логин"/>
-                            <div class="info-input-error error" id="registration-input-error">
+                    <div className={style.registrationBlockInfo}>
+                        <h1 className={style.infoTitle}>РЕГИСТРАЦИЯ</h1>
+                        <div className={style.infoInput}>
+                            <input className={style.infoInputWindow} id = "email" type="email" name="Е-mail" placeholder="Логин"/>
+                            <div className={style.infoInputError + " " + style.Error} id="registration-input-error">
                                 Поле не должно быть пустым
                             </div>
-                            <div class="info-input-error2 error" id="registration-input-error2">
+                            <div className={style.infoInputError2 + " " + style.Error} id="registration-input-error2">
                                 Логин должен содержать не менее 4-х символов
                             </div>
                         </div>
                 
-                        <div class="info-input">
-                            <input class="info-input__window" id = "password" type="text" name="password" placeholder="Пароль"/>
-                            <div class="info-input-error3 error" id="registration-input-error3">
+                        <div className={style.infoInput}>
+                            <input className={style.infoInputWindow} id = "password" type="text" name="password" placeholder="Пароль"/>
+                            <div className={style.infoInputError3 + " " + style.Error} id="registration-input-error3">
                                 Поле не должно быть пустым
                             </div>
-                            <div class="info-input-error4 error" id="registration-input-error4">
+                            <div className={style.infoInputError4 + " " + style.Error} id="registration-input-error4">
                                 Пароль должен содержать не менее 4-х символов
                             </div>
                         </div>
-                        <div class="info-checkbox check">
-                            <label class="check-label" >
-                                <input class="check__input" id = "label" type="checkbox"/>
-                                <span class="check-elem" id = "checkbox" ></span>
+                        <div className={style.infoCheckbock}>
+                            <label className={style.checkLabel} >
+                                <input className={style.checkInput} id = "label" type="checkbox"/>
+                                <span className={style.checkElem} id = "checkbox" ></span>
                                 Я согласен получать обновления на почту
                             </label>
                         </div>
                     </div>
-                    <div class="info-input-error5 " id="registration-input-error4">
+                    <div className={style.infoInputError5 + " " + style.Error} id="registration-input-error5">
                     Логин или пароль неверен
                     </div>
-                    <div class="registration-block__button">
-                        <button class="button" id = "button">Войти</button>
+                    <div>
+                        <Link to='/'>
+                            <button className={style.registrationBlockButton}>
+                                <h1 className={style.entranceBlockButtonTitle}>Регистрация</h1>
+                            </button>
+                        </Link>
                     </div>
                 </form>
+            </div>
             </div>
         </main>
     );

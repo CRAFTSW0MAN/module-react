@@ -1,38 +1,64 @@
-import './Products.css';
+import style from './Products.module.css';
 import {menuList} from '../../menuList.js';
 import Card from '../../components/elements/Products/card.js'; 
+import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
 function Products() {
+    const [basket, setbasket] = useState (0)
+    const [sum, setSum] = useState (0)
+
+    const addPricePlus = (price) => {
+        setbasket (basket + 1)
+        setSum (sum + +price)
+    }
+    // const addPriceMinus = (price) => {
+    //     if( basket > 0){
+    //         setbasket (basket - 1)
+    //         setSum (sum - +price)
+
+    //     }else {
+    //         setbasket = 0
+    //         setbasket = 0
+    //     }
+    // }
+
+
     return (
-        <main className='main'>
-            <div className='main-container container'>
-                <header className='container-header'>
-                    <div className='header-block'>
-                        <div className='header-title'>
-                            <button className='header-title__button'>
-                                <img src="images/button-prosucts.svg" alt="" />
-                            </button>
-                            <h1 className='header-title__title'>НАША ПРОДУКЦИЯ</h1>
-                        </div>
-                        <div className='header-basket'>
-                            <div className='basket'>
-                                <p className='basket-amount'>3 товара <br/>на сумму 3 500 ₽</p>
+        <main className={style.main}>
+            <div className={style.mainContainer}>
+                <header className={style.containerHeader}>
+                    <div className={style.headerBlock}>
+                            <h1 className={style.headerTitleName}>НАША ПРОДУКЦИЯ</h1>
+                        <div className={style.headerBasket}>
+                            <div className={style.basket}>
+                                <p className={style.basketAmount}>{basket} товара <br/>на сумму {sum} ₽</p>
                             </div>
-                            <button className='header__button button'>
-                                <img className='button__imges' src='images/basket.svg' alt=''/>
+                            <Link to="/basket">
+                            <button className={style.headerButton}>
+                                <img className={style.buttonImges} src='images/basket.svg' alt=''/>
                             </button>
+                            </Link>
+                            <Link to = "/" >
+                                <button className={style.headerTitleButton}>Выйти</button>
+                            </Link>
                         </div>
                     </div>
                 </header>
 
-                <div className='container-menu'>
-                    {menuList.map(product02 => {
+                <div className={style.containerMenu}>
+                    {menuList.map((card, index) => {
+                        const {id, img, name, description, price, weight, handelePlus, /*handeleMinus*/} = card;
                         return(
-                            <Card 
-                                img={product02.img}
-                                name ={product02.name}
-                                description ={product02.description}
-                                price ={product02.price}
-                                weight ={product02.weight}
+                            <Card
+                                key={index}
+                                id={id}
+                                img={img}
+                                name ={name}
+                                description ={description}
+                                price ={price}
+                                weight ={weight}
+                                handelePlus = {(e)=> addPricePlus(price)}
+                                //handeleMinus = {(e)=> addPriceMinus(price)} // пока работает не правильно, если прибавляется несколько карточек,то сумма некорректно удаляется 
                             />
                         )
                     })}

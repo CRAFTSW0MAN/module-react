@@ -3,38 +3,55 @@
     color: #FFFFFF;
 }
 
-.main-container {
+.mainContainer {
     width: 1440px;
     margin: 0 auto;
 }
+.container{
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-.main-container__header{
+.mainContainerHeader{
     padding: 50px 0 40px 0;
     margin: 0 auto;
     width: 900px;
     display: flex;
     align-items: center;
 }
-.header__button {
+.headerButton {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background-color: #161516;
-    padding: 0 32px 32px 0;
-    margin: 0 65px 0 10px;
+    margin: 0 65px 0 20px;
     transition: 200ms;
 }
-.header__button:hover {
+.headerButton:hover {
     background-color: #d55151;
 }
-.header__title{
+.headerTitle{
     font-size: 31px;
     font-weight: 700;
 }
-.main-block {
+.headerTitleButton{
+    border: 1px solid #D58C51;
+    color: #D58C51;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 77px;
+    background-color: #161516;
+    transition: 200ms;
+}
+.headerTitleButton:hover {
+    background-color: #d55151;
+}
+.mainBlock {
     border-top: 1px solid #D58C51;
 }
-.main-block-basket {
+.mainBlockBasket {
     width: 980px;
     margin: 20px auto 0;
     padding-bottom: 20px;
@@ -42,26 +59,26 @@
     justify-content: space-between;
     align-items: center;
 }
-.basket-title{
+.basketTitle{
     font-size: 21px;
     font-weight: 400;
     text-transform: uppercase;
 }
-.main-container-choice {
-    height: calc(90vh - 75px);
+.mainContainerChoice {
+    height: calc(85vh - 43px);
     overflow: auto;
 }
-.basket-sum{
+.basketSum{
     font-size: 18px;
     font-weight: 400;
     color: #D58C51;
 }
-.basket-botton {
+.basketBotton {
     padding: 12px 42px;
     background-color: #D58C51;
     font-size: 14px;
     transition: 200ms;
 }
-.basket-botton:hover {
+.basketBotton:hover {
     background-color: #d55151;
 }

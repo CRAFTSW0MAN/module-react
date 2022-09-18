@@ -1,46 +1,49 @@
-body{
+.main{
     background-image: url(/public/images/Authorization.jpg);
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.main {
+.container {
     position: relative;
     height: 1080px;
 }
-.registration{
+.containerEntrance{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
     background-color: #FFFFFF;
     width: 460px;
     height: 340px;
     text-align: center;
 }
 
-.registration-block-conversion {
-    margin: 10px 20px;
+.entranceBlockConversion {
     color: #D58C51;
+    margin: 10px 20px;
     font-size: 11px;
     font-weight: 300;
     text-align: end;
     transition: 200ms;
 }
-.form-reg:hover {
+.formAuth:active{
+    color: #D58C51;
+}
+.formAuth:hover {
     text-decoration: underline;
 }
-.info{
+.entranceBlockInfo{
     padding: 0 20px;
     color: #161516;
     position: relative;
 }
-.info-title{
+.infoTitle{
     font-size: 31px;
     font-weight: 700;
     padding-bottom: 30px;
 }
-.info-input__window{
+.infoInputWindow{
     border-radius: 61px;
     border: 1px solid #D58C51;
     width: 390px;
@@ -49,48 +52,36 @@ body{
     font-weight: 400;
     margin-bottom: 20px;
 }
-.error {
+.Error {
     text-align: start;
     font-size: 8px;
     font-weight: 300;
-    color: #FF0B0B;
-    padding: 0 23px;
 }
 
-.info-input-error {
-    position: absolute;
-    top: 130px;
-    display: none;
-}
-.info-input-error2 {
-    position: absolute;
-    top: 130px;
-    display: none;
-}
-.info-input-error3 {
-    position: absolute;
-    top: 190px;
-    display: none;
-}
-.info-input-error4 {
-    position: absolute;
-    top: 190px;
-    display: none;
-}
-.info-input-error5 {
-    font-size: 8px;
-    font-weight: 300;
+.infoInputError {
     color: #FFFFFF; /**#FF0B0B; станет после изменения**/
-    padding: 15px;
+    position: absolute;
+    top: 107px;
 }
-.check {
+.infoInputError2 {
+    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    position: absolute;
+    top: 170px;
+}
+
+.entranceError3 {
+    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    text-align: center;
+    padding: 12px;
+}
+.infoCheckbox {
     display: flex;
     text-align: start;
     align-items: center;
 }
 
 /**сам текст label **/
-.check-label {
+.checkLabel {
     display: inline-block;
     padding:0 33px;
     text-align: start;
@@ -102,7 +93,7 @@ body{
 }
 
 /**создаем новый уникальный "checkbox"**/
-.check-elem {
+.checkElem {
     position: absolute;
     content: "";
     display: inline-block;
@@ -115,7 +106,7 @@ body{
     top: -3px;
 }
 /**скрываем сам "checkbox"**/
-.check-label input[type="checkbox"] {
+.checkLabel input[type="checkbox"] {
     position: absolute;
     display: none;
     -webkit-appearance: none;
@@ -126,7 +117,7 @@ body{
 }
 
 /**создаем галочку при состоянии ":checked" условие: если  для label:checked ,то новый "checkbox" с :after должен стать **/
-.check-label input:checked + .check-elem:after {
+.checkLabel input:checked + .checkElem:after {
     content: "";
     position: absolute;
     width: 15px;
@@ -137,13 +128,14 @@ body{
     cursor: pointer;
 }
 
-.button {
+.entranceBlockButton {
     background-color: #D58C51;
     font-size: 14px;
     font-weight: 400;
     padding: 12px 77px;
     transition: 200ms;
+
 }
-.button:hover {
+.entranceBlockButton:hover {
     background-color: #e66a6a;
 }
