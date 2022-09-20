@@ -1,5 +1,22 @@
 import style from './cardBasket.module.css'
-function CardBasket({img, name, price}) {
+//import React, {useState} from 'react';
+//import { useDispatch} from 'react-redux'
+import { addProduct, removeProductBasket } from '../../../store/reducers/bascet'
+import { v4 as uuidv4 } from 'uuid'
+
+function CardBasket({img, name, price,id}) {
+
+    // const dispatch = useDispatch()
+
+    // let card = {
+    //     id: uuidv4(),
+    //     img: img,
+    //     price: price
+    // }
+    // const handeleRemoveProductBasket = () => {
+    //     dispatch(removeProductBasket(card))
+
+    // }
     return (
         <div className= {style.cardBasket}>
             <div className={style.basketInfo}>
@@ -9,7 +26,7 @@ function CardBasket({img, name, price}) {
             <div className={style.basketTotal}>
                 <span className={style.basketTotalPrice}>{price}</span>
                 <span className={style.basketTotalRuble}> ₽</span>
-                <button className={style.basketTotalButton}>
+                <button /*onClick={handeleRemoveProductBasket}*/ className={style.basketTotalButton}>
                     <img src="images/end.svg" alt="" />
                 </button>
             </div>

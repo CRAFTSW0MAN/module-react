@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom' 
+import { Routes, Route } from 'react-router-dom' 
 import Basket from './Pages/Backet/Basket.js'
 import Authorization from './Pages/Authorization/Authorization.js'
 import Registration from './Pages/Registration/Registration'

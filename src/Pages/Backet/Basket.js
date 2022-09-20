@@ -1,8 +1,12 @@
 import style from './Basket.module.css';
-import {menuList} from '../../menuList.js';
+//import {menuList} from '../../menuList.js';
 import CardBasket from '../../components/elements/Basket/cardBasket.js';
 import { Link } from 'react-router-dom' 
+import { useSelector } from 'react-redux'
 function Basket() {
+    const backet = useSelector(state => state.basket.backet)
+    console.log(backet);
+    const pricesProducts = useSelector(state => state.basket.pricesProducts)
     return (
         <main className={style.main}>
             <div className={style.mainContainer}>
@@ -18,13 +22,14 @@ function Basket() {
                     </Link>
                 </div>
                 <div className={style.mainContainerChoice}>
-                    {menuList.map((item, index) => {
+                    {backet.map((item, index) => {
+                        const {img, name, price, id} = item
                         return(
                             <CardBasket 
                                 key={index}
-                                img={item.img}
-                                name ={item.name}
-                                price ={item.price}
+                                img={img}
+                                name = {name}
+                                price ={price}
                             />
                         )
                     })}
@@ -33,9 +38,9 @@ function Basket() {
             <div className={style.mainBlock}>
                 <div className={style.mainBlockBasket}>
                     <div className={style.basket}>
-                        <span className={style.basketTitle}>Заказ на сумму: </span>
+                        <span className={style.basketTitle}>Заказ на сумму: {pricesProducts}</span>
 
-                        <span className={style.basketSum}>6 220 ₽</span>
+                        <span className={style.basketSum}> ₽</span>
                     </div>
                     <button className={style.basketBotton}>Оформить заказ</button>
                 </div>

@@ -2,25 +2,31 @@ import style from './Products.module.css';
 import {menuList} from '../../menuList.js';
 import Card from '../../components/elements/Products/card.js'; 
 import { Link } from 'react-router-dom';
-import React, {useState} from 'react';
+import { useSelector } from 'react-redux'
+// import React, {useState} from 'react';
+
+
 function Products() {
-    const [basket, setbasket] = useState (0)
-    const [sum, setSum] = useState (0)
+    const count = useSelector(state => state.basket.count)
+    const pricesProducts = useSelector(state => state.basket.pricesProducts)
+    
+    // const [basket, setbasket] = useState (0)
+    // const [sum, setSum] = useState (0)
 
-    const addPricePlus = (price) => {
-        setbasket (basket + 1)
-        setSum (sum + +price)
-    }
-    // const addPriceMinus = (price) => {
-    //     if( basket > 0){
-    //         setbasket (basket - 1)
-    //         setSum (sum - +price)
-
-    //     }else {
-    //         setbasket = 0
-    //         setbasket = 0
-    //     }
+    // const addPricePlus = (price) => {
+    //     setbasket (basket + 1)
+    //     setSum (sum + +price)
     // }
+    // // const addPriceMinus = (price) => {
+    // //     if( basket > 0){
+    // //         setbasket (basket - 1)
+    // //         setSum (sum - +price)
+
+    // //     }else {
+    // //         setbasket = 0
+    // //         setbasket = 0
+    // //     }
+    // // }
 
 
     return (
@@ -31,7 +37,7 @@ function Products() {
                             <h1 className={style.headerTitleName}>НАША ПРОДУКЦИЯ</h1>
                         <div className={style.headerBasket}>
                             <div className={style.basket}>
-                                <p className={style.basketAmount}>{basket} товара <br/>на сумму {sum} ₽</p>
+                                <p className={style.basketAmount}>{count} товара <br/>на сумму {pricesProducts} ₽</p>
                             </div>
                             <Link to="/basket">
                             <button className={style.headerButton}>
@@ -47,7 +53,7 @@ function Products() {
 
                 <div className={style.containerMenu}>
                     {menuList.map((card, index) => {
-                        const {id, img, name, description, price, weight, handelePlus, /*handeleMinus*/} = card;
+                        const {id, img, name, description, price, weight} = card;
                         return(
                             <Card
                                 key={index}
@@ -57,8 +63,6 @@ function Products() {
                                 description ={description}
                                 price ={price}
                                 weight ={weight}
-                                handelePlus = {(e)=> addPricePlus(price)}
-                                //handeleMinus = {(e)=> addPriceMinus(price)} // пока работает не правильно, если прибавляется несколько карточек,то сумма некорректно удаляется 
                             />
                         )
                     })}
