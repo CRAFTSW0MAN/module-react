@@ -1,4 +1,6 @@
 .main {
+    width: 100vw;
+    height: 100vh;
     background-image: url('/public/images/Product-backgraund.jpg');
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -7,6 +9,8 @@
 }
 
 .mainContainer{
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.73)
 }
 
@@ -61,7 +65,7 @@
 .blockCard{
     margin: 0 auto;
     width: 1440px;
-    height: 918px;
+    height: 875px;
     display: flex;
     justify-content:space-around;
 }

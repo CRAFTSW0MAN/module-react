@@ -1,8 +1,8 @@
 import style from './Authorization.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, {useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux'
-import { removeUser } from '../../store/reducers/form.js'
+import {useSelector, useDispatch} from 'react-redux';
+import { input } from '../../store/reducers/form.js';
 
 function Authorization(data) {
     const dispatch = useDispatch();
@@ -14,27 +14,31 @@ function Authorization(data) {
     const [passwordError, setPasswordError] = useState('');
     const [entranceError, setEntranceError] = useState('');
     // Вызываем массив из form
-    const users = useSelector(state => state.user.user)
+    const users = useSelector(state => state.user.user);
+    // для навигации 
+    const navigate = useNavigate();
 
     const loginHandler = (e) => {
         setLogin(e.target.value)
-    }
+    };
     const passwordHandler = (e) => {
         setPassword(e.target.value)
-    }
+    };
+
 
     const handeleСreationAuth = (e) => {
         e.preventDefault();
-        if(login == ''){
+        if(login === ''){
             setLoginError('Поле не должно быть пустым');
-            if(password == ''){
+            if(password === ''){
                 setPasswordError('Поле не должно быть пустым');
+                setEntranceError('');
                 return;
             } else {
                 setPasswordError('');
+                setEntranceError ('Логин или пароль неверен');
+                return;
             };
-            return;
-
         } else {
             let findUser = users.find(item => item.login === login);
             if (findUser && (findUser.password === password)){
@@ -42,51 +46,26 @@ function Authorization(data) {
                 setPasswordError('');
                 setEntranceError('');
                 console.log ('прошла проверку ', findUser, login, password, users);
-                dispatch (removeUser());
+                dispatch (input());
+                navigate('/products');
             }else {
-                if(password == ''){
+                if(password === ''){
                     setLoginError('');
                     setPasswordError('Поле не должно быть пустым');
+                    setEntranceError ('Логин или пароль неверен');
                     return;
                 } else {
                     setLoginError('');
                     setPasswordError('');
                     setEntranceError ('Логин или пароль неверен');
                     console.log('не прошла проверку ' , findUser, login, password, users);
-                }
-            }
-        }
-    }
+                    return;
+                };
+            };
+        };
+    };
 
 
-
-    // // привязка к action
-    // const login = useSelector(state => state.user.login)
-    // const password = useSelector(state => state.user.login)
-    // const dispatch = useDispatch()
-    // let item = {
-    //     idx: uuidv4(),
-    //     id: id,
-    //     name: name,
-    //     img: img,
-    //     price: price,
-    //     info: info,
-    // }
-    // const handeleAddProdeuct = (e) => {
-    //     dispatch(addProduct(item));
-    // }
-    // const handelClick = () => {
-
-        
-    //     debugger;
-    //     let a = this.state.login;
-        // e.preventDefault()
-        // if (document.querySelector('.InputError').value === ''){
-        //     document.querySelector('.InputError').style.color = '#FF0B0B';
-        // } else{
-        //     document.querySelector('.InputError').style.color = '#FFFFFF';
-        // }
-    // }
     return (
         <main className={style.main}>
             <div className={style.container}>
@@ -126,9 +105,8 @@ function Authorization(data) {
                 </form>
             </div>
             </div>
-            
         </main>
     );
-}
+};
 
 export default Authorization;

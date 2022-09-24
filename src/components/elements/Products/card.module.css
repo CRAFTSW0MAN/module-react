@@ -1,7 +1,7 @@
 .card {
   color: #FFFFFF;
   border: 1px solid #D58C51;
-  width: 270px;
+  width: 272px;
   height: 552px;
   text-align: center;
   padding: 30px 25px 15px 20px;
@@ -58,7 +58,6 @@
   background-color: #D58C51;
 }
 .count {
-  color: #FFFFFF;
   font-size: 18px;
   font-weight: 500;
   display: flex;
@@ -67,5 +66,5 @@
 }
 .countButton {
   font-size: 14px;
-  padding: 0 10px;
+  padding: 0 5px;
 }

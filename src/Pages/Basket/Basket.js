@@ -1,11 +1,20 @@
 import style from './Basket.module.css';
 import CardBasket from '../../components/elements/Basket/cardBasket.js';
-import { Link } from 'react-router-dom' 
-import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
+import { exit } from '../../store/reducers/form.js';
 function Basket() {
-    const basket = useSelector(state => state.basket.basket)
+    const navigate =useNavigate ();
+    const dispatch = useDispatch();
+
+    const basket = useSelector(state => state.basket.basket);
+
+    const handeleExit = (e) => {
+        dispatch(exit());
+        navigate('/');
+    }
     console.log(basket);
-    const pricesProducts = useSelector(state => state.basket.pricesProducts)
+    const pricesProducts = useSelector(state => state.basket.pricesProducts);
     return (
         <main className={style.main}>
             <div className={style.mainContainer}>
@@ -16,13 +25,11 @@ function Basket() {
                         </Link>
                         <h1 className={style.headerTitle}>КОРЗИНА С ВЫБРАННЫМИ ТОВАРАМИ</h1>
                     </header>
-                    <Link to = "/" >
-                        <button className={style.headerTitleButton}>Выйти</button>
-                    </Link>
+                        <button onClick={handeleExit} className={style.headerTitleButton}>Выйти</button>
                 </div>
                 <div className={style.mainContainerChoice}>
                     {basket.map((item, index) => {
-                        const {id, idx, img, name, description, price, weight} = item
+                        const {id, idx, img, name, price} = item
                         
                         return(
                             <Link to = {`/products/${id}`} key= {index}>
@@ -35,8 +42,8 @@ function Basket() {
                                 price ={price}
                             />
                             </Link>
-                        )
-                    })}
+                        );
+                    })};
                 </div>
             </div>
             <div className={style.mainBlock}>
@@ -51,6 +58,6 @@ function Basket() {
             </div>
         </main>
     );
-}
+};
 
 export default Basket;

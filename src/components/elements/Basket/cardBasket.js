@@ -1,19 +1,17 @@
-import style from './cardBasket.module.css'
-//import React, {useState} from 'react';
-import { useDispatch} from 'react-redux'
-import { removeProductBasket } from '../../../store/reducers/basket'
+import style from './cardBasket.module.css';
+import { useDispatch} from 'react-redux';
+import { removeProductBasket } from '../../../store/reducers/basket';
 
 function CardBasket({img, name, price,id, idx, info }) {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     // в начале отрабатывала кнопочка удаления , а при нажатии на саму карточку уже перекидывало на индивидуальную карточку 
     const handeleRemoveProductBasket = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        dispatch(removeProductBasket(idx))
-
-    }
+        dispatch(removeProductBasket(idx));
+    };
     return (
         <div className= {style.cardBasket}>
             <div className={style.basketInfo}>
@@ -29,6 +27,6 @@ function CardBasket({img, name, price,id, idx, info }) {
             </div>
         </div>
     );
-}
+};
 
 export default CardBasket;

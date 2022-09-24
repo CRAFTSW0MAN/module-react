@@ -6,7 +6,8 @@
 }
 .container {
     position: relative;
-    height: 1080px;
+    width: 100vw;
+    height: 100vh;
 }
 .containerEntrance{
     position: absolute;
@@ -20,12 +21,14 @@
 }
 
 .entranceBlockConversion {
-    color: #D58C51;
     margin: 10px 20px;
     font-size: 11px;
     font-weight: 300;
     text-align: end;
     transition: 200ms;
+}
+.formAuth {
+    color: #D58C51;
 }
 .formAuth:active{
     color: #D58C51;
@@ -72,9 +75,11 @@
 }
 
 .entranceError3 {
-    color: #FF0B0B; 
-    text-align: center;
-    padding: 12px;
+    color: #FF0B0B;
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    transform: translate(-50%);
 }
 .infoCheckbox {
     display: flex;
@@ -133,6 +138,7 @@
 }
 
 .entranceBlockButton {
+    margin-top: 35px;
     background-color: #D58C51;
     font-size: 14px;
     font-weight: 400;

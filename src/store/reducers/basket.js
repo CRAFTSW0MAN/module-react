@@ -28,7 +28,7 @@ const basketSlice = createSlice ({
             },0);
         },
     }
-})
+});
 
-export const { addProduct, removeProductBasket, toggleModalVisability} = basketSlice.actions
-export default basketSlice.reducer
+export const { addProduct, removeProductBasket, toggleModalVisability} = basketSlice.actions;
+export default basketSlice.reducer;

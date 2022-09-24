@@ -1,18 +1,15 @@
-import style from './card.module.css'
-import React, {useState} from 'react';
-import { useDispatch, useSelector} from 'react-redux'
-import { addProduct, removeProductBasket } from '../../../store/reducers/basket'
-import { v4 as uuidv4 } from 'uuid'
-import { Link } from 'react-router-dom';
-import { keyboard } from '@testing-library/user-event/dist/keyboard';
+import style from './card.module.css';
+import { useDispatch, useSelector} from 'react-redux';
+import { addProduct} from '../../../store/reducers/basket';
+import { v4 as uuidv4 } from 'uuid';
 
 
 function Card({img, name, description, price,weight,id,info}) {
     // 
-    const dispatch = useDispatch()
-    const basket = useSelector(state => state.basket.basket)
+    const dispatch = useDispatch();
+    const basket = useSelector(state => state.basket.basket);
     //для добавления счетчика в саму карточку 
-    const count = basket.filter(item => item.id === id).length
+    const count = basket.filter(item => item.id === id).length;
     
 
     let item = {
@@ -21,20 +18,14 @@ function Card({img, name, description, price,weight,id,info}) {
         name: name,
         img: img,
         price: price
-    }
+    };
     // в начале отрабатывала кнопочка добавления , а при нажатии на саму карточку уже перекидывало на индивидуальную карточку 
     const handeleAddProdeuct = (e) => {
         e.preventDefault();
         e.stopPropagation();
         dispatch(addProduct(item));
 
-    }
-    // const handeleRemoveProductBasket = (e) => {
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     dispatch(removeProductBasket(item.idx))
-    //     console.log(item.idx)
-    // }
+    };
 
 
     return (
@@ -49,13 +40,12 @@ function Card({img, name, description, price,weight,id,info}) {
                         <span className={style.infoWeight}>{weight}</span>
                     </div>
                     <div className={style.count}>
-                        <button /*onClick= {handeleRemoveProductBasket}*/ className={style.button}>-</button>
-                        <div className={style.countButton}>{count}</div> 
+                        <div className={style.countButton}> В корзине {count} шт</div> 
                         <button onClick={handeleAddProdeuct} className={style.button}>+</button>
                     </div>
                 </div>
             </div>
     );
-}
+};
 
 export default Card;

@@ -14,12 +14,15 @@ const userSlice = createSlice ({
             state.user.push(action.payload);
 
         },
-        removeUser(state){
-            // isAuth = false;
+        input(state){
+            state.isAuth = true;
+        },
+        exit(state){
+            state.isAuth = false;
         },
 
     }
-})
+});
 
-export const {creationAuth, removeUser} = userSlice.actions
-export default userSlice.reducer
+export const {creationAuth, input, exit} = userSlice.actions;
+export default userSlice.reducer;
