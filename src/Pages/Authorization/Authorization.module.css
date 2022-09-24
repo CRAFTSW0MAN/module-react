@@ -59,18 +59,20 @@
 }
 
 .infoInputError {
-    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    color: #FF0B0B; /**#FF0B0B; станет после изменения**/
     position: absolute;
     top: 107px;
+    left: 40px;
 }
 .infoInputError2 {
-    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    color: #FF0B0B; /**#FF0B0B; станет после изменения**/
     position: absolute;
     top: 170px;
+    left: 40px;
 }
 
 .entranceError3 {
-    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    color: #FF0B0B; 
     text-align: center;
     padding: 12px;
 }
@@ -120,11 +122,13 @@
 .checkLabel input:checked + .checkElem:after {
     content: "";
     position: absolute;
-    width: 15px;
-    height: 15px;
-    left: 3px;
-    background: url('/public/images/check.svg');
-    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13.5px;
+    height: 13.5px;
+    border-radius: 50%;
+    background-color: #D58C51;
     cursor: pointer;
 }
 

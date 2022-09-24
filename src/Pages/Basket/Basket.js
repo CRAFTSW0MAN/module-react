@@ -1,11 +1,10 @@
 import style from './Basket.module.css';
-//import {menuList} from '../../menuList.js';
 import CardBasket from '../../components/elements/Basket/cardBasket.js';
 import { Link } from 'react-router-dom' 
 import { useSelector } from 'react-redux'
 function Basket() {
-    const backet = useSelector(state => state.basket.backet)
-    console.log(backet);
+    const basket = useSelector(state => state.basket.basket)
+    console.log(basket);
     const pricesProducts = useSelector(state => state.basket.pricesProducts)
     return (
         <main className={style.main}>
@@ -22,15 +21,20 @@ function Basket() {
                     </Link>
                 </div>
                 <div className={style.mainContainerChoice}>
-                    {backet.map((item, index) => {
-                        const {img, name, price, id} = item
+                    {basket.map((item, index) => {
+                        const {id, idx, img, name, description, price, weight} = item
+                        
                         return(
+                            <Link to = {`/products/${id}`} key= {index}>
                             <CardBasket 
                                 key={index}
+                                idx ={idx}
+                                id = {id}
                                 img={img}
                                 name = {name}
                                 price ={price}
                             />
+                            </Link>
                         )
                     })}
                 </div>

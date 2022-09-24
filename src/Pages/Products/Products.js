@@ -1,33 +1,13 @@
 import style from './Products.module.css';
 import {menuList} from '../../menuList.js';
-import Card from '../../components/elements/Products/card.js'; 
+import Card from '../../components/elements/Products/card.js';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-// import React, {useState} from 'react';
 
 
 function Products() {
     const count = useSelector(state => state.basket.count)
     const pricesProducts = useSelector(state => state.basket.pricesProducts)
-    
-    // const [basket, setbasket] = useState (0)
-    // const [sum, setSum] = useState (0)
-
-    // const addPricePlus = (price) => {
-    //     setbasket (basket + 1)
-    //     setSum (sum + +price)
-    // }
-    // // const addPriceMinus = (price) => {
-    // //     if( basket > 0){
-    // //         setbasket (basket - 1)
-    // //         setSum (sum - +price)
-
-    // //     }else {
-    // //         setbasket = 0
-    // //         setbasket = 0
-    // //     }
-    // // }
-
 
     return (
         <main className={style.main}>
@@ -52,11 +32,12 @@ function Products() {
                 </header>
 
                 <div className={style.containerMenu}>
-                    {menuList.map((card, index) => {
-                        const {id, img, name, description, price, weight} = card;
+                    {menuList.map((item, index) => {
+                        const {id, idx, img, name, description, price, weight} = item;
                         return(
+                            <Link to = {`/products/${id}`} key= {index}>
                             <Card
-                                key={index}
+                                idx = {idx}
                                 id={id}
                                 img={img}
                                 name ={name}
@@ -64,6 +45,7 @@ function Products() {
                                 price ={price}
                                 weight ={weight}
                             />
+                            </Link>
                         )
                     })}
                 </div>

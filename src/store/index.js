@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import bascetReducer from './reducers/bascet.js'
+import basketReducer from './reducers/basket.js'
+import userReducer from './reducers/form.js'
 
 export default configureStore({
     reducer: {
-        basket: bascetReducer
+        basket: basketReducer,
+        user: userReducer,
     }
-})
+});

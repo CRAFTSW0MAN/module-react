@@ -1,0 +1,124 @@
+.main {
+    background-image: url('/public/images/Product-backgraund.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.mainContainer{
+    background-color: rgba(0, 0, 0, 0.73)
+}
+
+.headerBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1240px;
+    margin: 0 auto;
+    padding: 56px 0;
+}
+.headerButton {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    padding: 0 32px 32px 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+.headerButton:hover {
+    background-color: #d55151;
+}
+.headerBasket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.basketAmount{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.headerButton2 {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 22px;
+}
+.headerTitleButton{
+    border: 1px solid #D58C51;
+    color: #D58C51;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 77px;
+    margin-left: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 200ms;
+}
+.headerTitleButton:hover {
+    background-color: #d55151;
+}
+/*=======================================================================*/
+.blockCard{
+    margin: 0 auto;
+    width: 1440px;
+    height: 918px;
+    display: flex;
+    justify-content:space-around;
+}
+.cardImg {
+    height: 503px;
+    width: 501px;
+}
+.cardDescription{
+    width: 520px;
+}
+.descriptionName {
+    width: 414px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px;
+    color: #D58C51;
+    padding: 60px 0 30px 0;
+}
+.descriptionInfo {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    padding-bottom: 55px;
+}
+.descriptionSpecification {
+    width: 414px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.specificationButton{
+    border: 1px solid;
+    color:  #131313;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 62px;
+    margin-left: 50px;
+    background-color: #D58C51;
+    transition: 200ms;
+}
+.specificationButton:hover {
+    background-color: #d55151;
+}
+.specification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.specificationPrice{
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 28px;
+}
+.specificationWeight{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+
+}

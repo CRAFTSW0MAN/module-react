@@ -1,22 +1,19 @@
 import style from './cardBasket.module.css'
 //import React, {useState} from 'react';
-//import { useDispatch} from 'react-redux'
-import { addProduct, removeProductBasket } from '../../../store/reducers/bascet'
-import { v4 as uuidv4 } from 'uuid'
+import { useDispatch} from 'react-redux'
+import { removeProductBasket } from '../../../store/reducers/basket'
 
-function CardBasket({img, name, price,id}) {
+function CardBasket({img, name, price,id, idx, info }) {
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-    // let card = {
-    //     id: uuidv4(),
-    //     img: img,
-    //     price: price
-    // }
-    // const handeleRemoveProductBasket = () => {
-    //     dispatch(removeProductBasket(card))
+    // в начале отрабатывала кнопочка удаления , а при нажатии на саму карточку уже перекидывало на индивидуальную карточку 
+    const handeleRemoveProductBasket = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch(removeProductBasket(idx))
 
-    // }
+    }
     return (
         <div className= {style.cardBasket}>
             <div className={style.basketInfo}>
@@ -26,7 +23,7 @@ function CardBasket({img, name, price,id}) {
             <div className={style.basketTotal}>
                 <span className={style.basketTotalPrice}>{price}</span>
                 <span className={style.basketTotalRuble}> ₽</span>
-                <button /*onClick={handeleRemoveProductBasket}*/ className={style.basketTotalButton}>
+                <button onClick={handeleRemoveProductBasket} className={style.basketTotalButton}>
                     <img src="images/end.svg" alt="" />
                 </button>
             </div>

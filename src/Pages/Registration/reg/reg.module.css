@@ -8,7 +8,7 @@
     position: relative;
     height: 1080px;
 }
-.containerRegistration{
+.containerEntrance{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -19,18 +19,21 @@
     text-align: center;
 }
 
-.registrationBlockConversion {
-    margin: 10px 20px;
+.entranceBlockConversion {
     color: #D58C51;
+    margin: 10px 20px;
     font-size: 11px;
     font-weight: 300;
     text-align: end;
     transition: 200ms;
 }
-.registrationBlockConversion:hover {
+.formAuth:active{
+    color: #D58C51;
+}
+.formAuth:hover {
     text-decoration: underline;
 }
-.registrationBlockInfo{
+.entranceBlockInfo{
     padding: 0 20px;
     color: #161516;
     position: relative;
@@ -58,31 +61,22 @@
 .infoInputError {
     color: #FF0B0B; /**#FF0B0B; станет после изменения**/
     position: absolute;
-    top: 105px;
+    top: 107px;
     left: 40px;
 }
-/* .infoInputError2 {
-    color: #FFFFFF; #FF0B0B; станет после изменения
-    position: absolute;
-    top: 105px;
-} */
 .infoInputError2 {
     color: #FF0B0B; /**#FF0B0B; станет после изменения**/
     position: absolute;
-    top: 167px;
+    top: 170px;
     left: 40px;
 }
-/* .infoInputError4 {
-    color: #FFFFFF; 
-    position: absolute;
-    top: 167px;
-}
-.infoInputError5 {
-    text-align:center;
-    color: #FFFFFF; 
+
+.entranceError3 {
+    color: #FFFFFF; /**#FF0B0B; станет после изменения**/
+    text-align: center;
     padding: 12px;
-} */
-.infoCheckbock {
+}
+.infoCheckbox {
     display: flex;
     text-align: start;
     align-items: center;
@@ -138,14 +132,14 @@
     cursor: pointer;
 }
 
-.registrationBlockButton {
+.entranceBlockButton {
     background-color: #D58C51;
     font-size: 14px;
     font-weight: 400;
     padding: 12px 77px;
     transition: 200ms;
-    margin-top: 30px;
+
 }
-.registrationBlockButton:hover {
+.entranceBlockButton:hover {
     background-color: #e66a6a;
 }

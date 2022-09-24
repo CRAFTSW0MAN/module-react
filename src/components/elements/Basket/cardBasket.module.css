@@ -1,4 +1,5 @@
 .cardBasket {
+    color: #FFFFFF;
     margin: 25px auto;
     width: 880px;
     display: flex;
@@ -14,6 +15,9 @@
     font-size: 17px;
     font-weight: 500;
     padding: 0 90px;
+}
+.basketInfoName:hover {
+    color: #D58C51;
 }
 .basketInfoImg {
     height: 122px;

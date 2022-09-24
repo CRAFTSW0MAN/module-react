@@ -1,11 +1,11 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 
-const backetSlice = createSlice ({
-    name: 'bascet',
+const basketSlice = createSlice ({
+    name: 'basket',
     initialState: {
         basket: [],
         count: 0,
-        pricesProducts: 0
+        pricesProducts: 0,
     },
     reducers: {
         addProduct(state, action) {
@@ -18,17 +18,17 @@ const backetSlice = createSlice ({
             },0);
         },
         removeProductBasket (state, action) {
-            state.basket.filter((item) => item.id !==action.payload.id  // удаляет карточку 
+            state.basket = state.basket.filter((item) => item.idx !==action.payload// удаляет карточку 
             );
             state.count =state.basket.reduce ((sum) => { // при активации кнопочки счетчик меняется на -1
-                return sum -=1
+                return sum +=1
             },0);
-            state.pricesProducts = state.basket.reduce ((sum, current) => { // при активации кнопочки сумма УМЕНЬШАЕТСЯ на ту сумму нужной карточки 
-                return sum - +current.price
+            state.pricesProducts = state.basket.reduce ((sum,current) => { // при активации кнопочки сумма УМЕНЬШАЕТСЯ на ту сумму нужной карточки 
+                return sum + +current.price
             },0);
         },
     }
 })
 
-export const { addProduct, removeProductBasket} = backetSlice.actions
-export default backetSlice.reducer
+export const { addProduct, removeProductBasket, toggleModalVisability} = basketSlice.actions
+export default basketSlice.reducer
