@@ -54,11 +54,11 @@ function Products() {
                             />
                             </Link>
                         );
-                    })};
+                    })}
                 </div>
             </div>
         </main>
-    );
+    )
 };
 
 export default Products;

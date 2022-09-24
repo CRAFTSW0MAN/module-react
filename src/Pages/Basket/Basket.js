@@ -43,7 +43,7 @@ function Basket() {
                             />
                             </Link>
                         );
-                    })};
+                    })}
                 </div>
             </div>
             <div className={style.mainBlock}>
@@ -57,7 +57,7 @@ function Basket() {
                 </div>
             </div>
         </main>
-    );
-};
+    )
+}
 
 export default Basket;
